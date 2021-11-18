@@ -29,7 +29,14 @@ public class UserScript : MonoBehaviour
         {
             namePartical.text = hit.transform.name;
             predmet.transform.position = hit.point;
-            hook.GetComponent<HookScript>().SetPointToGo(hit.point);
+            if (!hit.transform.name.Contains("Slab"))
+            {
+                hook.GetComponent<HookScript>().SetPointToGo(hit.point);
+            }
+            else
+            {
+                hook.GetComponent<HookScript>().SetPointToGo(hit.transform.gameObject, true);
+            }
         }
     }
 }

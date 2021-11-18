@@ -18,7 +18,7 @@ public class TruckScript : MonoBehaviour
         if (empty)
         {
             LoadingSlabs();
-            
+
         }
     }
     private void Update()
@@ -27,16 +27,8 @@ public class TruckScript : MonoBehaviour
         {
             MoveToConstraction();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            foreach(Transform child in pointLoading)
-            {
-                Destroy(child.gameObject);
-                UnloadingSlabs();
-            }
-        }
     }
-    public void LoadingSlabs()
+    private void LoadingSlabs()
     {
         for (float h = .1f; h <= .9f; h += .2f)
         {
@@ -47,21 +39,21 @@ public class TruckScript : MonoBehaviour
         move = true;
         empty = false;
     }
-    public void MoveToConstraction()
+    private void MoveToConstraction()
     {
         if (move && !empty)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speedMove);
+            transform.Translate(Vector3.left * Time.deltaTime * speedMove,Space.World);
             if (transform.position.x < 0)
             {
                 transform.position = constractionPoint;
                 move = false;
             }
         }
-        else if(move && empty)
+        else if (move && empty)
         {
-            transform.Translate(Vector3.right * Time.deltaTime * speedMove);
-            if (transform.position.x > 50)
+            transform.Translate(Vector3.right * Time.deltaTime * speedMove,Space.World);
+            if (transform.position.x > 50f)
             {
                 transform.position = outPoint;
                 move = false;
@@ -73,8 +65,8 @@ public class TruckScript : MonoBehaviour
 
     public void UnloadingSlabs()
     {
-        totalSlabs = pointLoading.childCount;
-        Debug.Log(pointLoading.childCount);
+        totalSlabs -= 1;
+        Debug.Log(totalSlabs);
         if (totalSlabs == 0)
         {
             empty = true;
