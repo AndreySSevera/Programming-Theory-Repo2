@@ -72,7 +72,6 @@ public class HookScript : MonoBehaviour
         targetYpos = pointToMove.transform.position.y + .1f;
         target = ifTarget;
         lenghPathCatch = selfPosY - targetYpos;
-        Debug.Log(lenghPathCatch + " " + selfPosY + " " + targetYpos);
 
         lookPoint.transform.LookAt(targetPos);
         lenghPath = Vector3.Magnitude(targetPos - lookPoint.transform.position);
@@ -132,8 +131,10 @@ public class HookScript : MonoBehaviour
             }
             else if (catchTarget)
             {
+                GameSceneManager.instance.TextCountSM(targetObject.GetComponent<Slab>().Mass / 1000, 1);
                 Destroy(targetObject);
                 catchTarget = false;
+                Debug.Log(move + " " + target + " " + overTarget + " " + catchTarget);
             }
         }
         else

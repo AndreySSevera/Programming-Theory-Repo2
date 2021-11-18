@@ -60,9 +60,6 @@ public class GameSceneManager : MonoBehaviour
     {
         instance = this;
 
-        CountMass = MenuScript.instance.countMass;
-        CountSlab = MenuScript.instance.countSlabs;
-
         countMassText.text = "Mass of slabs : " + CountMass;
         countSlabText.text = "Slabs : " + CountSlab;
 
@@ -70,16 +67,16 @@ public class GameSceneManager : MonoBehaviour
 
     public void TextCountSM(float mass,int slab)
     {
-        CountMass += mass;
-        CountSlab += slab;
+        CountMass = mass;
+        CountSlab = slab;
 
         countMassText.text = "Mass of slabs : " + CountMass;
         countSlabText.text = "Slabs : " + CountSlab;
     }
     public void BackToMenu()
     {
-        MenuScript.instance.countMass = CountMass;
-        MenuScript.instance.countSlabs = CountSlab;
+        MenuScript.instance.CountMass += CountMass;
+        MenuScript.instance.CountSlabs += CountSlab;
 
         SceneManager.LoadScene(0);
     }

@@ -7,6 +7,13 @@ using UnityEngine.UI;
 
 public class MenuOthercript : MonoBehaviour
 {
+    public Text countSlabText;
+    public Text countMassText;
+
+    private void Start()
+    {
+        TextInfo();
+    }
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -18,5 +25,11 @@ public class MenuOthercript : MonoBehaviour
 #else
         Application.Quit();
 #endif
+        MenuScript.instance.Save();
+    }
+    private void TextInfo()
+    {
+        countMassText.text = "" + MenuScript.instance.CountMass;
+        countSlabText.text = "" + MenuScript.instance.CountSlabs;
     }
 }
