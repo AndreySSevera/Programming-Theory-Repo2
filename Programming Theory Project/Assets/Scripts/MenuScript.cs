@@ -8,20 +8,22 @@ public class MenuScript : MonoBehaviour
 {
     public static MenuScript instance;
 
-    private float countMass;
-    private int countSlabs;
+    public float countMass { get; set; }
+    public int countSlabs { get; set; }
 
     private void Awake()
     {
+        
+
         if (instance != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
+            return;
         }
-        else
-        {
-            instance = this;
-        }
-        DontDestroyOnLoad(this);
+
+        instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
     public void StartGame()
     {

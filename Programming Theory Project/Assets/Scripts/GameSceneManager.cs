@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
     public static GameSceneManager instance;
 
-    private int countSlab = 0;
+    public Text countSlabText;
+    public Text countMassText;
+
+    private int countSlab;
+    private float countMass;
+
     public int CountSlab
     {
         get 
@@ -25,7 +32,7 @@ public class GameSceneManager : MonoBehaviour
             }
         }
     }
-    private float countMass = 0;
+    
     public float CountMass
     {
         get 
@@ -44,18 +51,37 @@ public class GameSceneManager : MonoBehaviour
             }
         }
     }
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        
-        DontDestroyOnLoad(this);
-    }
     public interface IInformer
     {
         string Info();
     }
-    
+
+    private void Awake()
+    {
+        instance = this;
+
+        CountMass = MenuScript.instance.countMass;
+        CountSlab = MenuScript.instance.countSlabs;
+
+        countMassText.text = "Mass of slabs : " + CountMass;
+        countSlabText.text = "Slabs : " + CountSlab;
+
+    }
+
+    public void TextCountSM(float mass,int slab)
+    {
+        CountMass += mass;
+        CountSlab += slab;
+
+        countMassText.text = "Mass of slabs : " + CountMass;
+        countSlabText.text = "Slabs : " + CountSlab;
+    }
+    public void BackToMenu()
+    {
+        MenuScript.instance.countMass = CountMass;
+        MenuScript.instance.countSlabs = CountSlab;
+
+        SceneManager.LoadScene(0);
+    }
+
 }
