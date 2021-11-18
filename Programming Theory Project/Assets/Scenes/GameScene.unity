@@ -599,6 +599,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589300954}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &657062343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3796760587638887714, guid: d78252911c8cab545abc481dd7315652, type: 3}
+  m_PrefabInstance: {fileID: 1556341747}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &657062347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657062343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2dcf77579afe04f8ec536c65fdaebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slab: {fileID: 8525777737802981219, guid: ead56b57e709f4744a0d9cf8969badc5, type: 3}
+  pointLoading: {fileID: 1217597476}
+  outPoint: {x: 50, y: 0, z: -20}
+  constractionPoint: {x: 0, y: 0, z: -20}
+  speedMove: 20
 --- !u!1 &756646964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1203,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199211543}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1217597476 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4771307070925096053, guid: d78252911c8cab545abc481dd7315652, type: 3}
+  m_PrefabInstance: {fileID: 1556341747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1340808698
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1555,15 +1582,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6627965408289383917, guid: d78252911c8cab545abc481dd7315652, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.9782639
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6627965408289383917, guid: d78252911c8cab545abc481dd7315652, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000038146973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6627965408289383917, guid: d78252911c8cab545abc481dd7315652, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.040174
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 6627965408289383917, guid: d78252911c8cab545abc481dd7315652, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2391,7 +2418,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c73e33bbca3210746986d6118d187a0d, type: 2}
     - target: {fileID: 6911361822139563566, guid: 0b64b3be288ea6b44a5e2a752f7efde6, type: 3}
       propertyPath: speedMoove
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7081896221707296753, guid: 0b64b3be288ea6b44a5e2a752f7efde6, type: 3}
       propertyPath: m_Name
