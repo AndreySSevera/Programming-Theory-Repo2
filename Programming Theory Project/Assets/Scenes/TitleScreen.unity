@@ -629,6 +629,7 @@ GameObject:
   - component: {fileID: 902941536}
   - component: {fileID: 902941535}
   - component: {fileID: 902941534}
+  - component: {fileID: 902941538}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -719,6 +720,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &902941538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902941533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673720e24faa5ef4f8c5a32711ded05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,9 +1492,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1469757282}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: ExiteGame
+      - m_Target: {fileID: 902941538}
+        m_TargetAssemblyTypeName: MenuOthercript, Assembly-CSharp
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1691,8 +1704,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1469757282}
-        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+      - m_Target: {fileID: 902941538}
+        m_TargetAssemblyTypeName: MenuOthercript, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:

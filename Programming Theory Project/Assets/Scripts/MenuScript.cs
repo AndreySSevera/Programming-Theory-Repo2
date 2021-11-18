@@ -25,17 +25,4 @@ public class MenuScript : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
-    }
-    public void ExiteGame()
-    {
-#if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
-#else
-        Application.Quit();
-#endif
-
-    }
 }
